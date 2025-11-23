@@ -9,7 +9,6 @@ import net.minecraft.client.util.InputUtil;
 import net.minecraft.network.packet.c2s.play.UpdatePlayerAbilitiesC2SPacket;
 import org.lwjgl.glfw.GLFW;
 
-
 public class LightFlightClient implements ClientModInitializer {
     private static KeyBinding flightKey;
     private void updateAbilitiesWithDelay(ClientPlayerEntity player) {
@@ -34,13 +33,19 @@ public class LightFlightClient implements ClientModInitializer {
         ));
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (flightKey.wasPressed()) {
-                if (client.player != null) {
-                    if (client.player.getAbilities().flying) {
-                        client.player.getAbilities().flying = false;
-                    } else {
-                        client.player.getAbilities().flying = true;
+                if (client.player != null ) {
+                    if (client.isInSingleplayer()) {
+                        if (client.player.getAbilities().flying) {
+                            client.player.getAbilities().flying = false;
+                            updateAbilitiesWithDelay(client.player);
+                        } else {
+                            if (client.player.isCreative() || client.player.hasPermissionLevel(4)) {
+                                client.player.getAbilities().flying = true;
+                                client.player.fallDistance = 0.0F;
+                                updateAbilitiesWithDelay(client.player);
+                            }
+                        }
                     }
-                    updateAbilitiesWithDelay(client.player);
                 }
             }
         });
