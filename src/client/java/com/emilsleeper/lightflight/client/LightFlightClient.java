@@ -1,4 +1,4 @@
-package com.emilsleeper.client;
+package com.emilsleeper.lightflight.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;

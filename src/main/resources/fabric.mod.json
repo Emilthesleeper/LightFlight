@@ -11,13 +11,13 @@
   "environment": "client",
   "entrypoints": {
     "fabric-datagen": [
-      "com.emilsleeper.client.LightFlightDataGenerator"
+      "com.emilsleeper.lightflight.client.LightFlightDataGenerator"
     ],
     "client": [
-      "com.emilsleeper.client.LightFlightClient"
+      "com.emilsleeper.lightflight.client.LightFlightClient"
     ],
     "main": [
-      "com.emilsleeper.LightFlight"
+      "com.emilsleeper.lightflight.LightFlight"
     ]
   },
   "depends": {

@@ -1,4 +1,4 @@
-package com.emilsleeper;
+package com.emilsleeper.lightflight;
 
 import net.fabricmc.api.ModInitializer;
 
