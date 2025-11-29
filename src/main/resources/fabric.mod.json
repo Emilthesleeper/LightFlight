@@ -4,8 +4,14 @@
   "version": "${version}",
   "name": "Light Flight",
   "description": "A LIGHTweight Flight Hotkey Mod.",
-  "authors": [],
-  "contact": {},
+  "authors": [
+    "Emil_the_sleeper"
+  ],
+  "contact": {
+    "homepage": "https://lightflight.emilsleeper.com/",
+    "sources": "https://github.com/Emilthesleeper/LightFlight",
+    "issues": "https://github.com/Emilthesleeper/LightFlight/issues/"
+  },
   "license": "GPL-3.0",
   "icon": "assets/lightflight/icon.png",
   "environment": "client",
